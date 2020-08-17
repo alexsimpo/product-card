@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #131313;
+}
+
+.container {
+  position: relative;
+}
+
+.container .card {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f478ff;
+  -webkit-clip-path: circle(150px at 80% 20%);
+          clip-path: circle(150px at 80% 20%);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:after {
+  content: 'Spiral';
+  position: absolute;
+  top: 30%;
+  left: -15%;
+  color: #fff;
+  font-size: 8em;
+  font-weight: 800;
+  font-style: italic;
+  opacity: 0.04;
+}
+
+.container .card .imgBx {
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  z-index: 100;
+  height: 220px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .card .imgBx img {
+  width: 100%;
+  position: absolute;
+}
+
+.container .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 125px;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 10;
+}
+
+.container .card .contentBx h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.container .card .contentBx .length, .container .card .contentBx .color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container .card .contentBx .length h3, .container .card .contentBx .color h3 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.container .card .contentBx .length span, .container .card .contentBx .color span {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  background: #fff;
+  margin: 0 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.container .card .contentBx .length span:hover, .container .card .contentBx .color span:hover {
+  background: #f478ff;
+}
+
+.container .card .contentBx .color span {
+  border-radius: 26px;
+}
+
+.container .card .contentBx .color span:nth-child(2) {
+  background: #f478ff;
+}
+
+.container .card .contentBx .color span:nth-child(3) {
+  background: #ff4646;
+}
+
+.container .card .contentBx .color span:nth-child(4) {
+  background: #f9b6ff;
+}
+
+.container .card .contentBx .color span:nth-child(5) {
+  background: #a9fcee;
+}
+
+.container .card .contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.container .card:hover:before {
+  -webkit-clip-path: circle(300px at 80% -20%);
+          clip-path: circle(300px at 80% -20%);
+}
+
+.container .card:hover .imgBx {
+  top: 5%;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.container .card:hover .contentBx {
+  height: 210px;
+}
+
+.container .card:hover .contentBx .color, .container .card:hover .contentBx .length {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.container .card:hover .contentBx a {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
+$background-color: #131313;
+$card-color: #232323;
+$pink-cable: #f478ff;
+$blue-cable: #f9b6ff;
+$red-cable: #ff4646;
+$green-cable: #a9fcee;
+$heading-color: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: $background-color;
+}
+
+.container {
+    position: relative;
+
+    .card {
+        position: relative;
+        width: 320px;
+        height: 450px;
+        background: $card-color;
+        border-radius: 20px;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $pink-cable;
+            clip-path: circle(150px at 80% 20%);
+            transition: 0.5s ease-in-out;
+        }
+
+        &:after {
+            content: 'Spiral';
+            position: absolute;
+            top: 30%;
+            left: -15%;
+            color: $heading-color;
+            font-size: 8em;
+            font-weight: 800;
+            font-style: italic;
+            opacity: 0.04;
+        }
+
+        
+        .imgBx {
+            position: absolute;
+            width: 100%;
+            top: 25%;
+            z-index: 100;
+            height: 220px;
+            transition: 0.5s;
+            
+            img {
+                width: 100%;
+                position: absolute;
+            }
+        }
+
+        .contentBx {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 125px;
+            text-align: center;
+            transition: 1s;
+            z-index: 10;
+
+            h2 {
+                position: relative;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: $heading-color;
+            }
+
+            .length, .color {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 8px 20px;
+                transition: 0.5s;
+                opacity: 0;
+                visibility: hidden;
+
+                h3 {
+                    color: $heading-color;
+                    font-weight: 300;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    margin-right: 10px;
+                }
+
+                span {
+                    width: 26px;
+                    height: 26px;
+                    text-align: center;
+                    line-height: 26px;
+                    font-size: 14px;
+                    background: $heading-color;
+                    margin: 0 5px;
+                    transition: 0.5s;
+                    border-radius: 6px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background: $pink-cable;
+                    }
+                }
+            }
+
+            .color span {             
+                border-radius: 26px;
+
+                &:nth-child(2) {
+                    background: $pink-cable;
+                }
+
+                &:nth-child(3) {
+                    background: $red-cable;
+                }
+
+                &:nth-child(4) {
+                    background: $blue-cable;                    
+                }
+
+                &:nth-child(5) {
+                    background: $green-cable;
+                }
+            }
+
+            a {
+                display: inline-block;
+                padding: 10px 20px;
+                background: $heading-color;
+                border-radius: 4px;
+                margin-top: 10px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: 0.5s;
+                opacity: 0;
+                transform: translateY(50px);
+            }
+        }
+
+        &:hover{
+
+            &:before {
+                clip-path: circle(300px at 80% -20%);
+            }
+
+            .imgBx{
+                top: 5%;
+                transform: translateY(0%);
+            }
+
+            .contentBx {
+                height: 210px;
+
+                .color, .length {
+                    opacity: 1;
+                    visibility: visible;
+                    transition-delay: 0.5s;
+                }
+
+                a {
+                    opacity: 1;
+                    transform: translateY(0px);
+                    transition-delay: 0.75s;
+                }
+            }
+        }
+    }
+}
